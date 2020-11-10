@@ -1,7 +1,7 @@
 # NextionSerialString
 
 ## Description
-A simple Nextion HMI library which computes string commands. The library is both a simple and powerful tool, easily modified to meet one’s needs. Designed and tested on the esp32 - however it is compatible with other MCUs.
+A simple Nextion HMI library which computes string commands. The library is both a simple and powerful tool, easily modified to meet one’s needs. Designed and tested on the esp32 - however it is assumed to be compatible with other MCUs.
 
 Feel free to support my work! If you found this code useful and it saved you time and effort, send a small sum of appreciation (to the value you think it is worth)
 to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
@@ -17,8 +17,7 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 /*![enter image description here](./extras/media/EasyNextionLibrary_Arduino_Library_Manager.png)*/
 
 ### Second Method
-1. Download the latest release of the NextionSerial String library.
-- From: [https://github.com/darrenjcosborne/NextionSerialString](https://github.com/darrenjcosborne/NextionSerialString)
+1. Download the latest release of the NextionSerialString library from: [https://github.com/darrenjcosborne/NextionSerialString](https://github.com/darrenjcosborne/NextionSerialString)
 2. Extract the `.zip` file 
 3. Copy the NextionSerialString folder, to: ....\Arduino\libraries\
 
@@ -29,7 +28,7 @@ All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger scr
 
 ### NextionConfig.h
 
-1. Define the each of the parameters according to your preferred settings
+1. Define each of the parameters according to your preferred settings
 ````Cpp
 #define nexSerial Serial2     // Define serial communication channel
 #define baud 115200     // Define baud rate. esp32 uses a baud rate of 115200
@@ -43,7 +42,7 @@ All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger scr
 #include "NextionSerialString.h"      // Include NextionSerialString Library
 #include "NextionConfig.h"      // Include NextionConfig
 ````
-2.  **Begin the object** using parameters from NextionConfig.h
+2.  **Begin the object** using parameters from `NextionConfig.h`
 ````Cpp
 NextionSerialString myNextion(nexSerial, baud, RX, TX);    // Initialise connection object                  
 ````
@@ -72,7 +71,7 @@ _serial->println(_serialData);      // Prints the string data received from the 
   */
 ````
 
-Enjoy the NextionSerialString Library!! :)
+Enjoy the NextionSerialString Library! :)
 
 ## Full Example Code
 
@@ -112,13 +111,11 @@ Enjoy the NextionSerialString Library!! :)
 
 NextionSerialString myNextion(nexSerial, baud, RX, TX);    // Create an object of NextionSerialString class with the name < connection >
 
-void setup()
-{
+void setup(){
   myNextion.begin();       // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
 }
 
-void loop()
-{  
+void loop(){  
   myNextion.listen();        // This function must be called repeatedly to respond to touch events from the Nextion panel
 }
 ````
