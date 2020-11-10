@@ -1,5 +1,5 @@
 /*!
- * NextionSerialString.cpp - Library for Serial Communication between ESP32 Chipsets & Nextion Displays using strings
+ * NextionSerialString.cpp - Library for Serial Communication between ESP32 & Nextion Display using strings
  * Copyright (c) 2020 Darren Osborne < darren@ozzyimages.com >
  * All rights reserved under the library's licence
  */
@@ -8,7 +8,7 @@
 #include "NextionSerialString.h"
 
 /*!
- * Couples the Nextion to a Serial and passes default values. If the defaults are omitted, 9600 baud and SERIAL_8N1 are used.
+ * Couples the Nextion and passes default values. If the defaults are omitted, 9600 baud and SERIAL_8N1 are used.
  */
 NextionSerialString::NextionSerialString(HardwareSerial &serial, uint32_t baud, uint32_t RX, uint32_t TX, uint32_t defaultBaud, uint32_t serialPara){
   _serial = &serial;
@@ -26,11 +26,11 @@ void NextionSerialString::begin(){
   _serial->begin(_defaultBaud, _serialPara, _RX, _TX);     // Baud rate begin function at default value with selected RX/TX pins
   _triple0xFF();      // Updates the Nextion
   _serial->print("baud=");      // Forward the desired baud rate to the Nextion
-  _serial->print(_baud);
+  _serial->print(_baud);        // As above
   _triple0xFF();      // Updates the Nextion
   delay(100);     // Gives the Nextion time to respond to the update
   _serial->begin(_baud, _serialPara, _RX, _TX);      // Restart the serial at the desired baud rate
-  _clear(400UL);      // Clears the serial buffer (time in unsigned long)
+  _clear(400UL);      // Clears the serial buffer (time variable type is unsigned long)
 }
  
 /*!
@@ -62,6 +62,6 @@ void NextionSerialString::listen(){
   while(_serial->available()){      // Looks for any serial data available
     _serialData += char(_serial->read());     // Reads each byte of serial data and adds this to the _serialData string
   }
-  readData(_serialData);     // Sends _serialData to be read
+  _handleData(_serialData);     // Sends _serialData to be read
   _serialData = "";      // Resets serialData to be blank
 }

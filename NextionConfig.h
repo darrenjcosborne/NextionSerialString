@@ -1,5 +1,5 @@
 /*!
- * NextionConfig.h - Configuration Library for Serial Communication between ESP32 Chipsets & Nextion Displays using strings
+ * NextionConfig.h - Configuration Library for Serial Communication between ESP32 & Nextion Display using strings
  * Copyright (c) 2020 Darren Osborne < darren@ozzyimages.com >
  * All rights reserved under the library's licence
  */

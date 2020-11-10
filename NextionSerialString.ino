@@ -1,5 +1,5 @@
 /*!
- * NextionSerialString.ino - Ozzy Images NextionSerialString Test Page
+ * NextionSerialString.ino - Ozzy Images NextionSerialString Setup Page
  * Copyright (c) 2020 Darren Osborne < darren@ozzyimages.com > 
  * All rights reserved under the library's licence
  */
@@ -8,11 +8,10 @@
 #include "NextionSerialString.h"
 #include "NextionConfig.h"
 
-NextionSerialString connection(nexSerial, baud, RX, TX);    // Initialise lightbox object
+NextionSerialString connection(nexSerial, baud, RX, TX);    // Initialise connection object
 
 void setup()
 {
-  //Serial.begin(baud);     // For debugging purposes only
   connection.begin();       // Starts the communication with the Nextion
 }
 
