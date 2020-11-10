@@ -1,7 +1,7 @@
 # NextionSerialString
 
 ## Description
-A simple Nextion HMI library which computes string commands. The library is both a simple and powerful tool, easily modified to meet one’s needs. It was designed specifically for the esp32, but is compatible with other MCUs.
+A simple Nextion HMI library which computes string commands. The library is both a simple and powerful tool, easily modified to meet one’s needs. Designed and tested on the esp32 - however it is compatible with other MCUs.
 
 Feel free to support my work! If you found this code useful and it saved you time and effort, send a small sum of appreciation (to the value you think it is worth)
 to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
