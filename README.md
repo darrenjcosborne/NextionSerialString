@@ -45,18 +45,18 @@ All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger scr
 ````
 2.  **Begin the object** using parameters from NextionConfig.h
 ````Cpp
-NextionSerialString connection(nexSerial, baud, RX, TX);    // Initialise connection object                  
+NextionSerialString myNextion(nexSerial, baud, RX, TX);    // Initialise connection object                  
 ````
 3.  **Place** the **begin()** function in the setup
 ````Cpp
 void setup(){
-  connection.begin();     // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
+  myNextion.begin();     // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
 }
 ````
 4. **Place** the **listen()** function in the loop.
 ````Cpp
 void loop(){
-  connection.listen();      // This function must be called repeatedly to respond to touch events from the Nextion panel
+  myNextion.listen();      // This function must be called repeatedly to respond to touch events from the Nextion panel
 }
 ````
 
@@ -110,16 +110,16 @@ Enjoy the NextionSerialString Library!! :)
 #include "NextionSerialString.h"      // Include NextionSerialString
 #include "NextionConfig.h"      // Include NextionConfig
 
-NextionSerialString connection(nexSerial, baud, RX, TX);    // Create an object of NextionSerialString class with the name < connection >
+NextionSerialString myNextion(nexSerial, baud, RX, TX);    // Create an object of NextionSerialString class with the name < connection >
 
 void setup()
 {
-  connection.begin();       // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
+  myNextion.begin();       // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
 }
 
 void loop()
 {  
-  connection.listen();        // This function must be called repeatedly to respond to touch events from the Nextion panel
+  myNextion.listen();        // This function must be called repeatedly to respond to touch events from the Nextion panel
 }
 ````
 
