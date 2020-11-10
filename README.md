@@ -25,10 +25,6 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 ***NOTE***: `.HMI` files for Nextion Editor are also included in the example folder.
 All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger screens.
 
-## The Main Functions
-- `begin();`
-- `listen();`
-
 ## A Simple Setup
 
 ### NextionConfig.h
@@ -69,7 +65,11 @@ void loop(){
 1. **Create any custom function** from this point on to read the incoming serial data
 ````Cpp
 _serial->println(_serialData);      // Prints the string data received from the Nextion
-[ put your code here !!!!]
+
+/*!
+  * Put your code here and create any custom function to read the incoming serial data
+  * Utilise the string.h library for optimal efficiency
+  */
 ````
 
 Enjoy the NextionSerialString Library!! :)
