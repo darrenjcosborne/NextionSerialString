@@ -1,12 +1,12 @@
 /*!
- * GUIFunctions.cpp - Function Handler between ESP32 & Nextion Display
+ * HMIFunctions.cpp - Function Handler between ESP32 & Nextion Display
  * Copyright (c) 2020 Darren Osborne < darren@ozzyimages.com >
  * All rights reserved under the library's licence
  */
 
 #include <arduino.h>
 #include <string.h>
-#include "NextionSerialString.h"
+#include "NextionSerialString.h"      // Include NextionSerialString
 
 /*!
  * Function handler which reads the incoming serial data and hands off to a custom function
@@ -18,7 +18,7 @@ void NextionSerialString::_handleData(String _serialData){
     _serial->println(_serialData);      // Prints the string data received from the Nextion
 
     /*!
-     * Create any custom function from this point on to read the incoming serial data
+     * Put your code here and create any custom function to read the incoming serial data
      * Utilise the string.h library for optimal efficiency
      */
 
