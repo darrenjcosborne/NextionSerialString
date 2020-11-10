@@ -42,7 +42,7 @@ All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger scr
 #include "NextionSerialString.h"      // Include NextionSerialString Library
 #include "NextionConfig.h"      // Include NextionConfig
 ````
-2.  **Begin the object** using parameters from NextionConfig.h
+2.  **Begin the object** using parameters from `NextionConfig.h`
 ````Cpp
 NextionSerialString myNextion(nexSerial, baud, RX, TX);    // Initialise connection object                  
 ````
