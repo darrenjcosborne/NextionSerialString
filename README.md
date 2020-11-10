@@ -71,7 +71,7 @@ _serial->println(_serialData);      // Prints the string data received from the 
   */
 ````
 
-Enjoy the NextionSerialString Library!! :)
+Enjoy the NextionSerialString Library! :)
 
 ## Full Example Code
 
