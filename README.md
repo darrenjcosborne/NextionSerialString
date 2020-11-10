@@ -14,7 +14,7 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 3.  Search for NextionSerialString using the search bar.
 4.  Click on the text area and select the latest version to install.
 
-/*![enter image description here](./extras/media/EasyNextionLibrary_Arduino_Library_Manager.png)*/
+![enter image description here](./extras/librarymanager.png)
 
 ### Second Method
 1. Download the latest release of the NextionSerialString library from: [https://github.com/darrenjcosborne/NextionSerialString](https://github.com/darrenjcosborne/NextionSerialString)
