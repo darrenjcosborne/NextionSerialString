@@ -29,7 +29,7 @@ All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger scr
 
 ### NextionConfig.h
 
-1. Define the each of the parameters according to your preferred settings
+1. Define each of the parameters according to your preferred settings
 ````Cpp
 #define nexSerial Serial2     // Define serial communication channel
 #define baud 115200     // Define baud rate. esp32 uses a baud rate of 115200
