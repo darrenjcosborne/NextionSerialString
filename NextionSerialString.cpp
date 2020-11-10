@@ -47,7 +47,7 @@ void NextionSerialString::_triple0xFF(){
  */
 void NextionSerialString::_clear(unsigned long _setTime){
   _timer = millis();      // Set timer to millis()
-  while(_serial->available() > 0){      // Read the serial until is is empty (used to clear serial buffer)
+  while(_serial->available() > 0){      // Read the serial until it is empty (used to clear serial buffer)
     if((millis() - _timer) > _setTime){     // Reading... waiting... but not forever...
       break;
     }
@@ -58,10 +58,10 @@ void NextionSerialString::_clear(unsigned long _setTime){
  * Placed in main loop. Reads the serial buffer
  */
 void NextionSerialString::listen(){
-  _serialData = "";     // Initialises serialData String to be blank
+  _serialData = "";     // Initialises serial data string to be empty
   while(_serial->available()){      // Looks for any serial data available
-    _serialData += char(_serial->read());     // Reads each byte of serial data and adds this to the _serialData string
+    _serialData += char(_serial->read());     // Reads each byte of serial data and adds this to the serial data string
   }
-  _handleData(_serialData);     // Sends _serialData to be read
-  _serialData = "";      // Resets serialData to be blank
+  _handleData(_serialData);     // Sends serial data to be read
+  _serialData = "";      // Resets serial data string to be empty
 }

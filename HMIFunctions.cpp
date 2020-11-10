@@ -15,7 +15,7 @@
 void NextionSerialString::_handleData(String _serialData){
   if(_serialData != ""){      // Check for blank string
       
-    _serial->println(_serialData);      // Prints the string data received from the Nextion
+    _serial->println(_serialData);      // Prints the serial data received from the Nextion
 
     /*!
      * Put your code here and create any custom function to read the incoming serial data
