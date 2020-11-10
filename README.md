@@ -8,7 +8,7 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 
 ## Installation
 
-### First Method
+### First Method **(Coming Soon)**
 1.  In the Arduino IDE, navigate to Sketch > Include Library > Manage Libraries
 2.  In the Library Manager you will find a list of libraries that are already installed, or ready for installation.
 3.  Search for NextionSerialString using the search bar.
