@@ -17,8 +17,7 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 /*![enter image description here](./extras/media/EasyNextionLibrary_Arduino_Library_Manager.png)*/
 
 ### Second Method
-1. Download the latest release of the NextionSerialString library.
-- From: [https://github.com/darrenjcosborne/NextionSerialString](https://github.com/darrenjcosborne/NextionSerialString)
+1. Download the latest release of the NextionSerialString library from: [https://github.com/darrenjcosborne/NextionSerialString](https://github.com/darrenjcosborne/NextionSerialString)
 2. Extract the `.zip` file 
 3. Copy the NextionSerialString folder, to: ....\Arduino\libraries\
 
