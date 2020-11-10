@@ -29,7 +29,7 @@ All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger scr
 - `begin();`
 - `listen();`
 
-## 4(?) Step Example
+## An Easy Example
 
 ### NextionConfig.h
 
@@ -40,7 +40,7 @@ All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger scr
 #define RX 16     // Define receiving data pin (RX)
 #define TX 17     // Define transmission data pin (TX)
 ````
-### *.ino
+### NextionSerialString.ino
 
 1.  **Include** ***NextionSerialString*** and create an object of `NextionSerialString` class
 ````Cpp
@@ -73,3 +73,82 @@ _serial->println(_serialData);      // Prints the string data received from the 
 ````
 
 Enjoy the NextionSerialString Library!! :)
+
+## Full Example Code
+
+### NextionConfig.h
+````Cpp
+/*!
+ * NextionConfig.h - Configuration Library for Serial Communication between ESP32 & Nextion Display using strings
+ * Copyright (c) 2020 Darren Osborne < darren@ozzyimages.com >
+ * All rights reserved under the library's licence
+ */
+
+// Define library only once
+#ifndef NextionConfig_h
+#define NextionConfig_h
+
+#include <arduino.h>
+
+#define nexSerial Serial2     // Define serial communication channel
+#define baud 115200     // Define baud rate. esp32 uses a baud rate of 115200
+#define RX 16     // Define receiving data pin (RX)
+#define TX 17     // Define transmission data pin (TX)
+
+#endif
+````
+
+### NextionSerialString.ino
+````Cpp
+/*!
+ * NextionSerialString.ino - Ozzy Images NextionSerialString Simple Example Code
+ * Copyright (c) 2020 Darren Osborne < darren@ozzyimages.com > 
+ * All rights reserved under the library's licence
+ */
+
+#include <arduino.h>
+#include "NextionSerialString.h"      // Include NextionSerialString
+#include "NextionConfig.h"      // Include NextionConfig
+
+NextionSerialString connection(nexSerial, baud, RX, TX);    // Create an object of NextionSerialString class with the name < connection >
+
+void setup()
+{
+  connection.begin();       // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
+}
+
+void loop()
+{  
+  connection.listen();        // This function must be called repeatedly to respond to touch events from the Nextion panel
+}
+````
+
+### HMIFunctions.cpp
+````Cpp
+/*!
+ * HMIFunctions.cpp - Function Handler between ESP32 & Nextion Display
+ * Copyright (c) 2020 Darren Osborne < darren@ozzyimages.com >
+ * All rights reserved under the library's licence
+ */
+
+#include <arduino.h>
+#include <string.h>
+#include "NextionSerialString.h"      // Include NextionSerialString
+
+/*!
+ * Function handler which reads the incoming serial data and hands off to a custom function
+ * Separated from NextionSerialString.cpp in order to see code modifications/custom functions more clearly
+ */
+void NextionSerialString::_handleData(String _serialData){
+  if(_serialData != ""){      // Check for blank string
+      
+    _serial->println(_serialData);      // Prints the string data received from the Nextion
+
+    /*!
+     * Put your code here and create any custom function to read the incoming serial data
+     * Utilise the string.h library for optimal efficiency
+     */
+
+  }
+}
+````
