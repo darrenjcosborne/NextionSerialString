@@ -8,14 +8,14 @@
 #include "NextionSerialString.h"      // Include NextionSerialString
 #include "NextionConfig.h"      // Include NextionConfig
 
-NextionSerialString connection(nexSerial, baud, RX, TX);    // Create an object of NextionSerialString class with the name < connection >
+NextionSerialString myNextion(nexSerial, baud, RX, TX);    // Create an object of NextionSerialString class with the name < myNextion >
 
 void setup()
 {
-  connection.begin();       // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
+  myNextion.begin();       // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
 }
 
 void loop()
 {  
-  connection.listen();        // This function must be called repeatedly to respond to touch events from the Nextion panel
+  myNextion.listen();        // This function must be called repeatedly to respond to touch events from the Nextion panel
 }
