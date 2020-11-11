@@ -15,14 +15,6 @@
  */
 void NextionSerialString::_handleData(String _serialData){
   if(_serialData != ""){      // Check for blank string
-      
-    //_serial->println(_serialData);      // Prints the serial data received from the Nextion
-
-    /*!
-     * Put your code here and create any custom function to read the incoming serial data
-     * Utilise the string.h library for optimal efficiency
-     */
-
     if(_serialData == "on"){
       digitalWrite(LEDPIN, HIGH);
       _serial->println("Turning the onbaord ESP32 blue led ON");

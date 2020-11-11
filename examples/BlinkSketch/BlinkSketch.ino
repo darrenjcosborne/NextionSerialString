@@ -1,5 +1,5 @@
 /*!
- * NextionSerialString.ino - Ozzy Images NextionSerialString Simple Example Code
+ * BlinkSketch.ino - Ozzy Images NextionSerialString Simple Example Code
  * Copyright (c) 2020 Darren Osborne < darren@ozzyimages.com > 
  * All rights reserved under the library's licence
  */
