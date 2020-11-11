@@ -30,8 +30,8 @@ All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger scr
 
 1. Define each of the parameters according to your preferred settings
 ````Cpp
-#define nexSerial Serial2     // Define serial communication channel
-#define baud 115200     // Define baud rate. esp32 uses a baud rate of 115200
+#define NEXSERIAL Serial2     // Define serial communication channel
+#define BAUD 115200     // Define baud rate. esp32 uses a baud rate of 115200
 #define RX 16     // Define receiving data pin (RX)
 #define TX 17     // Define transmission data pin (TX)
 ````
@@ -44,7 +44,7 @@ All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger scr
 ````
 2.  **Begin the object** using parameters from `NextionConfig.h`
 ````Cpp
-NextionSerialString myNextion(nexSerial, baud, RX, TX);    // Initialise connection object                  
+NextionSerialString myNextion(NEXSERIAL, BAUD, RX, TX);    // Initialise connection object                  
 ````
 3.  **Place** the **begin()** function in the setup
 ````Cpp
@@ -73,7 +73,7 @@ _serial->println(_serialData);      // Prints the string data received from the 
 
 Enjoy the NextionSerialString Library! :)
 
-## Full Example Code
+## Full Example Code (BlinkSketch.ino)
 
 ### NextionConfig.h
 ````Cpp
@@ -89,18 +89,19 @@ Enjoy the NextionSerialString Library! :)
 
 #include <arduino.h>
 
-#define nexSerial Serial2     // Define serial communication channel
-#define baud 115200     // Define baud rate. esp32 uses a baud rate of 115200
+#define NEXSERIAL Serial2     // Define serial communication channel
+#define BAUD 115200     // Define baud rate. esp32 uses a baud rate of 115200
 #define RX 16     // Define receiving data pin (RX)
 #define TX 17     // Define transmission data pin (TX)
+#define LEDPIN 4     // Define the esp32 onboard blue led
 
 #endif
 ````
 
-### NextionSerialString.ino
+### BlinkSketch.ino
 ````Cpp
 /*!
- * NextionSerialString.ino - Ozzy Images NextionSerialString Simple Example Code
+ * BlinkSketch.ino - Ozzy Images NextionSerialString Simple Example Code
  * Copyright (c) 2020 Darren Osborne < darren@ozzyimages.com > 
  * All rights reserved under the library's licence
  */
@@ -109,9 +110,10 @@ Enjoy the NextionSerialString Library! :)
 #include "NextionSerialString.h"      // Include NextionSerialString
 #include "NextionConfig.h"      // Include NextionConfig
 
-NextionSerialString myNextion(nexSerial, baud, RX, TX);    // Create an object of NextionSerialString class with the name < connection >
+NextionSerialString myNextion(NEXSERIAL, BAUD, RX, TX);    // Create an object of NextionSerialString class with the name < myNextion >
 
 void setup(){
+  pinMode(LEDPIN, OUTPUT);
   myNextion.begin();       // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
 }
 
@@ -131,6 +133,7 @@ void loop(){
 #include <arduino.h>
 #include <string.h>
 #include "NextionSerialString.h"      // Include NextionSerialString
+#include "NextionConfig.h"      // Include NextionConfig
 
 /*!
  * Function handler which reads the incoming serial data and hands off to a custom function
@@ -138,14 +141,15 @@ void loop(){
  */
 void NextionSerialString::_handleData(String _serialData){
   if(_serialData != ""){      // Check for blank string
-      
-    _serial->println(_serialData);      // Prints the string data received from the Nextion
-
-    /*!
-     * Put your code here and create any custom function to read the incoming serial data
-     * Utilise the string.h library for optimal efficiency
-     */
-
+    if(_serialData == "on"){
+      digitalWrite(LEDPIN, HIGH);
+      _serial->println("Turning the onbaord ESP32 blue led ON");
+    }else if(_serialData == "off"){
+      digitalWrite(LEDPIN, LOW);
+      _serial->println("Turning the onbaord ESP32 blue led OFF");
+    }else{
+      // Do nothing
+    } 
   }
 }
 ````
