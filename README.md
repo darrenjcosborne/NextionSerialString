@@ -22,7 +22,7 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 3. Copy the NextionSerialString folder, to: ....\Arduino\libraries\
 
 ***NOTE***: `.HMI` files for Nextion Editor are also included in the example folder.
-All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger screens.
+The `.HMI` file is designed for the Nextion NX4024T032_011 3.2" Basic Display.
 
 ## A Simple Setup
 
@@ -52,7 +52,7 @@ void setup(){
   myNextion.begin();     // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
 }
 ````
-4. **Place** the **listen()** function in the loop.
+4. **Place** the **listen()** function in the loop
 ````Cpp
 void loop(){
   myNextion.listen();      // This function must be called repeatedly to respond to touch events from the Nextion panel
