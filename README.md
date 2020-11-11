@@ -70,6 +70,8 @@ _serial->println(_serialData);      // Prints the string data received from the 
   * Utilise the string.h library for optimal efficiency
   */
 ````
+### Please note
+When compiling and uploading, ***ensure the transmission (TX) cable from the Nextion Display is not connected*** to the receiving (RX) pin of the esp32.
 
 Enjoy the NextionSerialString Library! :)
 
