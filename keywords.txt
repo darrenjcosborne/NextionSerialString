@@ -1,0 +1,14 @@
+# Syntax Coloring Map For ExampleLibrary
+
+# Datatypes (KEYWORD1)
+NextionSerialString KEYWORD1
+
+# Methods and Functions (KEYWORD2)
+
+# Instances (KEYWORD2)
+
+# Constants (LITERAL1)
+NEXSERIAL LITERAL1
+BAUD LITERAL1
+RX LITERAL1
+TX LITERAL1

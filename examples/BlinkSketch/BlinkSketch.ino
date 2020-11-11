@@ -8,9 +8,10 @@
 #include "NextionSerialString.h"      // Include NextionSerialString
 #include "NextionConfig.h"      // Include NextionConfig
 
-NextionSerialString myNextion(nexSerial, baud, RX, TX);    // Create an object of NextionSerialString class with the name < myNextion >
+NextionSerialString myNextion(NEXSERIAL, BAUD, RX, TX);    // Create an object of NextionSerialString class with the name < myNextion >
 
 void setup(){
+  pinMode(LEDPIN, OUTPUT);
   myNextion.begin();       // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
 }
 
