@@ -34,14 +34,14 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 ````
 ### NextionSerialString.ino
 
-1.  **Include** ***NextionSerialString*** and create an object of `NextionSerialString` class
+1.  **Include** ***NextionSerialString***
 ````Cpp
 #include "NextionSerialString.h"      // Include NextionSerialString Library
 #include "NextionConfig.h"      // Include NextionConfig
 ````
-2.  **Begin the object** using parameters from `NextionConfig.h`
+2.  **Begin the object** using parameters from `NextionConfig.h`, create an object of the `NextionSerialString` class
 ````Cpp
-NextionSerialString myNextion(NEXSERIAL, BAUD, RX, TX);    // Initialise connection object                  
+NextionSerialString myNextion(NEXSERIAL, BAUD, RX, TX);    // Create an object of NextionSerialString class with the name < myNextion >                  
 ````
 3.  **Place** the **begin()** function in the setup
 ````Cpp
