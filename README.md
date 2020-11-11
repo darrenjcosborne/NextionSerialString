@@ -146,10 +146,10 @@ void NextionSerialString::_handleData(String _serialData){
   if(_serialData != ""){      // Check for blank string
     if(_serialData == "on"){
       digitalWrite(LEDPIN, HIGH);
-      _serial->println("Turning the onbaord ESP32 blue led ON");
+      _serial->println("Switching the LEDPIN to HIGH");
     }else if(_serialData == "off"){
       digitalWrite(LEDPIN, LOW);
-      _serial->println("Turning the onbaord ESP32 blue led OFF");
+      _serial->println("Switching the LEDPIN to LOW");
     }else{
       // Do nothing
     } 
