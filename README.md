@@ -3,7 +3,7 @@
 ## Description
 A simple Nextion HMI library which computes string commands. The library is both a simple and powerful tool, easily modified to meet one’s needs. Designed and tested on the esp32 - however it is assumed to be compatible with other MCUs.
 
-Feel free to support my work! If you found this code useful and it saved you time and effort, send a small sum of appreciation (to the value you think it is worth)
+Feel free to support my work! If you found this code useful and it saved you some time and effort, send a small sum of appreciation (to the value you think it is worth)
 to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 
 ## Installation
@@ -14,7 +14,7 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 3.  Search for NextionSerialString using the search bar.
 4.  Click on the text area and select the latest version to install.
 
-/*![enter image description here](./extras/media/EasyNextionLibrary_Arduino_Library_Manager.png)*/
+![enter image description here](./extras/librarymanager.png)
 
 ### Second Method
 1. Download the latest release of the NextionSerialString library from: [https://github.com/darrenjcosborne/NextionSerialString](https://github.com/darrenjcosborne/NextionSerialString)
