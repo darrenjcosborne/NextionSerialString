@@ -14,15 +14,15 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 3.  Search for NextionSerialString using the search bar.
 4.  Click on the text area and select the latest version to install.
 
-![enter image description here](./extras/librarymanager.png)
+![librarymanager.png](./extras/media/librarymanager.png)
 
 ### Second Method
 1. Download the latest release of the NextionSerialString library from: [https://github.com/darrenjcosborne/NextionSerialString](https://github.com/darrenjcosborne/NextionSerialString)
 2. Extract the `.zip` file 
 3. Copy the NextionSerialString folder, to: ....\Arduino\libraries\
 
-***NOTE***: `.HMI` files for Nextion Editor are also included in the example folder.
-All `.HMIs` are set for 2.8" Basic screens for easier modification to bigger screens.
+***NOTE***: The `.HMI` and `.TFT` files for the Nextion Editor/Display are also included in the example folder.
+The `.HMI` file was designed for the Nextion NX4024T032_011 3.2" Basic Display.
 
 ## A Simple Setup
 
@@ -52,7 +52,7 @@ void setup(){
   myNextion.begin();     // This function must be called to reset the baud rate on the Nextion, to match that of the esp32
 }
 ````
-4. **Place** the **listen()** function in the loop.
+4. **Place** the **listen()** function in the loop
 ````Cpp
 void loop(){
   myNextion.listen();      // This function must be called repeatedly to respond to touch events from the Nextion panel
@@ -70,8 +70,11 @@ _serial->println(_serialData);      // Prints the string data received from the 
   * Utilise the string.h library for optimal efficiency
   */
 ````
+### Please note
+When compiling and uploading, ***ensure the transmission (TX) cable*** from the Nextion Display is ***NOT connected*** to the receiving (RX) pin of the esp32, otherwise it will timeout.
 
 Enjoy the NextionSerialString Library! :)
+
 
 ## Full Example Code (BlinkSketch.ino)
 
@@ -143,15 +146,25 @@ void NextionSerialString::_handleData(String _serialData){
   if(_serialData != ""){      // Check for blank string
     if(_serialData == "on"){
       digitalWrite(LEDPIN, HIGH);
-      _serial->println("Turning the onbaord ESP32 blue led ON");
+      _serial->println("Switching the LEDPIN to HIGH");
     }else if(_serialData == "off"){
       digitalWrite(LEDPIN, LOW);
-      _serial->println("Turning the onbaord ESP32 blue led OFF");
+      _serial->println("Switching the LEDPIN to LOW");
     }else{
       // Do nothing
     } 
   }
 }
+````
+
+### BlinkSketch.hmi
+
+![nextioneditor.png](./extras/media/nextioneditor.png)
+
+**Touch Press Event** code for each button is as follows:
+````Cpp
+print "on"      // Button b0
+print "off"     // Button b1
 ````
 
 ## Compatibility
