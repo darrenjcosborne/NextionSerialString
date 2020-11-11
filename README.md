@@ -71,7 +71,7 @@ _serial->println(_serialData);      // Prints the string data received from the 
   */
 ````
 ### Please note
-When compiling and uploading, ***ensure the transmission (TX) cable from the Nextion Display is not connected*** to the receiving (RX) pin of the esp32, otherwise it will timeout.
+When compiling and uploading, ***ensure the transmission (TX) cable*** from the Nextion Display is ***NOT connected*** to the receiving (RX) pin of the esp32, otherwise it will timeout.
 
 Enjoy the NextionSerialString Library! :)
 
