@@ -21,9 +21,6 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 2. Extract the `.zip` file 
 3. Copy the NextionSerialString folder, to: ....\Arduino\libraries\
 
-***NOTE***: The `.HMI` and `.TFT` files for the Nextion Editor/Display are also included in the example folder.
-The `.HMI` file was designed for the Nextion NX4024T032_011 3.2" Basic Display.
-
 ## A Simple Setup
 
 ### NextionConfig.h
@@ -166,6 +163,9 @@ void NextionSerialString::_handleData(String _serialData){
 print "on"      // Button b0
 print "off"     // Button b1
 ````
+
+***NOTE***: The `.HMI` and `.TFT` files for the Nextion Editor/Display are also included in the example folder.
+The `.HMI` file was designed for the Nextion NX4024T032_011 3.2" Basic Display.
 
 ## Compatibility
 * ESP32
