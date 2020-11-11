@@ -14,7 +14,7 @@ to my paypal, via this link: (https://paypal.me/ozzyimagesdonate)
 3.  Search for NextionSerialString using the search bar.
 4.  Click on the text area and select the latest version to install.
 
-![enter image description here](./extras/librarymanager.png)
+![librarymanager.png](./extras/media/librarymanager.png)
 
 ### Second Method
 1. Download the latest release of the NextionSerialString library from: [https://github.com/darrenjcosborne/NextionSerialString](https://github.com/darrenjcosborne/NextionSerialString)
@@ -152,6 +152,16 @@ void NextionSerialString::_handleData(String _serialData){
     } 
   }
 }
+````
+
+### BlinkSketch.hmi
+
+![nextioneditor.png](./extras/media/nextioneditor.png)
+
+**Touch Press Event** code for each button is as follows:
+````Cpp
+print "on"      // Button b0
+print "off"     // Button b1
 ````
 
 ## Compatibility
