@@ -73,7 +73,7 @@ When compiling and uploading, ***ensure the transmission (TX) cable*** from the 
 Enjoy the NextionSerialString Library! :)
 
 
-## Full Example Code (BlinkSketch.ino)
+## Full Example Code (BlinkSketch)
 
 ### NextionConfig.h
 ````Cpp
