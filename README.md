@@ -93,7 +93,7 @@ Enjoy the NextionSerialString Library! :)
 #define BAUD 115200     // Define baud rate. esp32 uses a baud rate of 115200
 #define RX 16     // Define receiving data pin (RX)
 #define TX 17     // Define transmission data pin (TX)
-#define LEDPIN 4     // Define the esp32 onboard blue led
+#define LEDPIN 4     // Define a gpio output pin for testing a led
 
 #endif
 ````
